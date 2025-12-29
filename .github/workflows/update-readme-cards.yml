@@ -22,7 +22,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.1.0
         with:
           card: streak
           options: username=${{ github.repository_owner }}
