@@ -6,7 +6,7 @@ import repoApi from "github-readme-stats-fast/api/pin.js";
 import topLangsApi from "github-readme-stats-fast/api/top-langs.js";
 import wakatimeApi from "github-readme-stats-fast/api/wakatime.js";
 import gistApi from "github-readme-stats-fast/api/gist.js";
-import stats from "github-readme-stats-fast/api/stats.js";
+import streakApi from "github-readme-stats-fast/api/streak.js";
 
 /**
  * Normalize option values to strings.
@@ -62,7 +62,7 @@ const parseOptions = (value) => {
 // TODO: Replace handler usage with a stable library API once exposed upstream.
 const cardHandlers = {
   stats: statsApi,
-  stats: stats,
+  streak: streakApi,
   "top-langs": topLangsApi,
   pin: repoApi,
   wakatime: wakatimeApi,
