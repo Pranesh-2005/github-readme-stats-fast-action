@@ -26,26 +26,22 @@ outputs:
 runs:
   using: composite
   steps:
-    # ✅ ADD: pnpm setup
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 9
-
-    # ✅ ADD: node setup (required for pnpm cache)
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
         node-version: 22
         cache: pnpm
 
-    # 🔁 REPLACED npm ci → pnpm install
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+
     - name: Install dependencies
       run: pnpm install --prod --frozen-lockfile
       shell: bash
       working-directory: ${{ github.action_path }}
 
-    # ⛔ unchanged
     - name: Generate card
       run: node ${{ github.action_path }}/index.js
       shell: bash
@@ -53,11 +49,10 @@ runs:
         INPUT_CARD: ${{ inputs.card }}
         INPUT_OPTIONS: ${{ inputs.options }}
         INPUT_PATH: ${{ inputs.path }}
-        PAT_1: ${{ inputs.token || github.token }}
+        # 👇 fallback handled in JS, not YAML
+        PAT_1: ${{ inputs.token }}
+        GITHUB_TOKEN: ${{ github.token }}
 
-branding:
-  icon: bar-chart-2
-  color: blue        PAT_1: ${{ inputs.token || github.token }}
 branding:
   icon: bar-chart-2
   color: blue
