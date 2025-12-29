@@ -1,6 +1,7 @@
 name: GitHub Readme Stats Action
 description: Generate GitHub Readme Stats cards in GitHub Actions.
 author: readme-tools
+
 inputs:
   card:
     description: Card type to generate (stats, top-langs, pin, wakatime, gist).
@@ -17,16 +18,34 @@ inputs:
     description: GitHub token (PAT or GITHUB_TOKEN).
     required: false
     default: ""
+
 outputs:
   path:
     description: Path where the SVG file was written.
+
 runs:
   using: composite
   steps:
+    # ✅ ADD: pnpm setup
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+
+    # ✅ ADD: node setup (required for pnpm cache)
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: pnpm
+
+    # 🔁 REPLACED npm ci → pnpm install
     - name: Install dependencies
-      run: npm ci --omit=dev --ignore-scripts
+      run: pnpm install --prod --frozen-lockfile
       shell: bash
       working-directory: ${{ github.action_path }}
+
+    # ⛔ unchanged
     - name: Generate card
       run: node ${{ github.action_path }}/index.js
       shell: bash
@@ -35,6 +54,10 @@ runs:
         INPUT_OPTIONS: ${{ inputs.options }}
         INPUT_PATH: ${{ inputs.path }}
         PAT_1: ${{ inputs.token || github.token }}
+
+branding:
+  icon: bar-chart-2
+  color: blue        PAT_1: ${{ inputs.token || github.token }}
 branding:
   icon: bar-chart-2
   color: blue
