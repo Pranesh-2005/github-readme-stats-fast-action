@@ -1,0 +1,148 @@
+import core from "@actions/core";
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+import statsApi from "github-readme-stats-fast/api/index.js";
+import repoApi from "github-readme-stats-fast/api/pin.js";
+import topLangsApi from "github-readme-stats-fast/api/top-langs.js";
+import wakatimeApi from "github-readme-stats-fast/api/wakatime.js";
+import gistApi from "github-readme-stats-fast/api/gist.js";
+import stats from "github-readme-stats-fast/api/stats.js";
+
+/**
+ * Normalize option values to strings.
+ * @param {Record<string, unknown>} options Input options.
+ * @returns {Record<string, string>} Normalized options.
+ */
+const normalizeOptions = (options) => {
+  const normalized = {};
+  for (const [key, val] of Object.entries(options)) {
+    if (Array.isArray(val)) {
+      normalized[key] = val.join(",");
+    } else if (val === null || val === undefined) {
+      continue;
+    } else {
+      normalized[key] = String(val);
+    }
+  }
+  return normalized;
+};
+
+/**
+ * Parse options from query string or JSON and normalize values to strings.
+ * @param {string} value Input value.
+ * @returns {Record<string, string>} Parsed options.
+ */
+const parseOptions = (value) => {
+  if (!value) return {};
+
+  const trimmed = value.trim();
+  const options = {};
+  if (trimmed.startsWith("{")) {
+    try {
+      Object.assign(options, JSON.parse(trimmed));
+    } catch (error) {
+      throw new Error("Invalid JSON in options.");
+    }
+  } else {
+    const queryString = trimmed.startsWith("?") ? trimmed.slice(1) : trimmed;
+    const params = new URLSearchParams(queryString);
+    for (const [key, val] of params.entries()) {
+      if (options[key]) {
+        options[key] = `${options[key]},${val}`;
+      } else {
+        options[key] = val;
+      }
+    }
+  }
+
+  return normalizeOptions(options);
+};
+
+// Map of card types to their respective API handlers.
+// TODO: Replace handler usage with a stable library API once exposed upstream.
+const cardHandlers = {
+  stats: statsApi,
+  stats: stats,
+  "top-langs": topLangsApi,
+  pin: repoApi,
+  wakatime: wakatimeApi,
+  gist: gistApi,
+};
+
+/**
+ * Validate required options for each card type.
+ * @param {string} card Card type.
+ * @param {Record<string, string>} query Parsed options.
+ * @param {string | undefined} repoOwner Repository owner from environment.
+ * @throws {Error} If required options are missing.
+ */
+const validateCardOptions = (card, query, repoOwner) => {
+  if (!query.username && repoOwner) {
+    query.username = repoOwner;
+    core.warning("username not provided; defaulting to repository owner.");
+  }
+  switch (card) {
+    case "stats":
+    case "top-langs":
+    case "streak":
+    case "wakatime":
+      if (!query.username) {
+        throw new Error(`username is required for the ${card} card.`);
+      }
+      break;
+    case "pin":
+      if (!query.repo) {
+        throw new Error("repo is required for the pin card.");
+      }
+      break;
+    case "gist":
+      if (!query.id) {
+        throw new Error("id is required for the gist card.");
+      }
+      break;
+    default:
+      break;
+  }
+};
+
+const run = async () => {
+  const card = core.getInput("card", { required: true }).toLowerCase();
+  const optionsInput = core.getInput("options") || "";
+  const outputPathInput = core.getInput("path");
+
+  const handler = cardHandlers[card];
+  if (!handler) {
+    throw new Error(`Unsupported card type: ${card}`);
+  }
+
+  const query = parseOptions(optionsInput);
+
+  validateCardOptions(card, query, process.env.GITHUB_REPOSITORY_OWNER);
+
+  const outputPathValue =
+    outputPathInput || path.join("profile", `${card}.svg`);
+  const outputPath = path.resolve(process.cwd(), outputPathValue);
+  await mkdir(path.dirname(outputPath), { recursive: true });
+
+  let svg = "";
+  const res = {
+    setHeader: () => {},
+    send: (value) => {
+      svg = value;
+      return value;
+    },
+  };
+
+  await handler({ query }, res);
+  if (!svg) {
+    throw new Error("Card renderer returned empty output.");
+  }
+
+  await writeFile(outputPath, svg, "utf8");
+  core.info(`Wrote ${outputPath}`);
+  core.setOutput("path", outputPathValue);
+};
+
+run().catch((error) => {
+  core.setFailed(error instanceof Error ? error.message : String(error));
+});
