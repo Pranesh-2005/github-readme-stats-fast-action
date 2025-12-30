@@ -18,7 +18,7 @@ jobs:
         run: mkdir -p profile
 
       - name: Generate stats card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v2
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: stats
           options: username=${{ github.repository_owner }}
@@ -26,7 +26,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v2
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: streak
           options: username=${{ github.repository_owner }}
