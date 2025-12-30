@@ -43,7 +43,7 @@ runs:
 
     # ✅ Install deps via pnpm
     - name: Install dependencies
-      run: pnpm install --prod --frozen-lockfile
+      run: pnpm install --prod --frozen-lockfile --ignore-scripts
       shell: bash
       working-directory: ${{ github.action_path }}
 
