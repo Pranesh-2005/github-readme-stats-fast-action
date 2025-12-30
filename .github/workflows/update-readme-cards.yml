@@ -2,7 +2,7 @@ name: Update README cards
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"   # daily
   workflow_dispatch:
 
 permissions:
@@ -15,22 +15,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 🔹 Stats card
       - name: Generate stats card
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: stats
-          options: username=${{ github.repository_owner }}
+          options: >
+            username=${{ github.repository_owner }}
+            &show_icons=true
+            &theme=radical
+            &cache_seconds=0
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 🔹 Top Languages card
+      - name: Generate top languages card
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        with:
+          card: top-langs
+          options: >
+            username=${{ github.repository_owner }}
+            &layout=compact
+            &theme=radical
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 🔹 Contribution Streak
       - name: Generate streak card
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: streak
-          options: username=${{ github.repository_owner }}
+          options: >
+            username=${{ github.repository_owner }}
+            &theme=radical
           path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 🔹 Commit updated SVGs
       - name: Commit cards
         run: |
           git config user.name "github-actions"
