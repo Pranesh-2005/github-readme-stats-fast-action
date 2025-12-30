@@ -10,11 +10,15 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
+      - name: Ensure profile directory
+        run: mkdir -p profile
+
       - name: Generate stats card
-        uses: Pranesh-2005/github-readme-stats-fast-action@34233bca6ca233f7ad16b2131242e58e5d105f14
+        uses: Pranesh-2005/github-readme-stats-fast-action@v2
         with:
           card: stats
           options: username=${{ github.repository_owner }}
@@ -22,7 +26,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@34233bca6ca233f7ad16b2131242e58e5d105f14
+        uses: Pranesh-2005/github-readme-stats-fast-action@v2
         with:
           card: streak
           options: username=${{ github.repository_owner }}
@@ -34,5 +38,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "Update README cards" || exit 0
+          git diff --cached --quiet || git commit -m "Update README cards"
+          git push          git commit -m "Update README cards" || exit 0
           git push
