@@ -5,20 +5,18 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ensure profile directory
-        run: mkdir -p profile
-
       - name: Generate stats card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v2
         with:
           card: stats
           options: username=${{ github.repository_owner }}
@@ -26,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v2
         with:
           card: streak
           options: username=${{ github.repository_owner }}
@@ -37,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+
           git add profile/*.svg
-          git diff --cached --quiet || git commit -m "Update README cards"
-          git push          git commit -m "Update README cards" || exit 0
-          git push
+          git commit -m "Update README cards" || echo "No changes to commit"
+          git push origin HEAD
