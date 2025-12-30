@@ -45,11 +45,10 @@ jobs:
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: streak
-          options: >
-            username=${{ github.repository_owner }}
-            &theme=radical
-          path: profile/streak.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          options: username=pranesh-2005
+       path: profile/streak.svg
+       token: ${{ secrets.GITHUB_TOKEN }}
+
 
       # 🔹 Commit updated SVGs
       - name: Commit cards
