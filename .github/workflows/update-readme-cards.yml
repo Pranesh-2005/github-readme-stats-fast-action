@@ -40,22 +40,20 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 🔹 Contribution Streak
+      # 🔹 Contribution Streak (IMPORTANT FIX HERE)
       - name: Generate streak card
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: streak
           options: username=pranesh-2005
-       path: profile/streak.svg
-       token: ${{ secrets.GITHUB_TOKEN }}
-
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # 🔹 Commit updated SVGs
       - name: Commit cards
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-
           git add profile/*.svg
           git commit -m "Update README cards" || echo "No changes to commit"
           git push origin HEAD
