@@ -42,7 +42,7 @@ jobs:
       - name: Generate Wakatime card
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
-          card: top-langs
+          card: wakatime
           options: username=praneshjs
           path: profile/wakatime.svg
           token: ${{ secrets.GITHUB_TOKEN }}
