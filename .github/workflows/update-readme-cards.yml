@@ -31,12 +31,20 @@ jobs:
           path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate streak card
+      - name: Generate Top Languages card
         uses: Pranesh-2005/github-readme-stats-fast-action@v1
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}
           path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Wakatime card
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        with:
+          card: top-langs
+          options: username=praneshjs
+          path: profile/wakatime.svg
           token: ${{ secrets.GITHUB_TOKEN }}
       
 
