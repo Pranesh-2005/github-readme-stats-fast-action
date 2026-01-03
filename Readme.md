@@ -55,8 +55,8 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "Update README cards" || exit 0
-          git push
+          git commit -m "Update README cards" || echo "No changes to commit"
+          git push origin HEAD
 ```
 
 Then embed from your profile README:
