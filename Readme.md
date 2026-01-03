@@ -42,7 +42,7 @@ jobs:
         with:
           card: streak
           options: username=${{ github.repository_owner }}&layout=compact
-          path: profile/top-langs.svg
+          path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate pin card
