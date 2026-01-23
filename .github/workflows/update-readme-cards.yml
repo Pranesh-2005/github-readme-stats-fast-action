@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Generate stats card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1.1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.2
         with:
           card: stats
           options: username=${{ github.repository_owner }}
@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1.1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.2
         with:
           card: streak
           options: username=${{ github.repository_owner }}
@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Top Languages card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1.1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.2
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}
@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Wakatime card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1.1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.2
         with:
           card: wakatime
           options: username=praneshjs
