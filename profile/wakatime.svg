@@ -126,11 +126,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >52 hrs 47 mins</text>
+      >53 hrs 48 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="33.28%">
+      <svg data-testid="lang-progress" width="33.35%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -153,7 +153,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="25.24%">
+      <svg data-testid="lang-progress" width="24.82%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -172,11 +172,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >15 hrs 35 mins</text>
+      >15 hrs 56 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="9.83%">
+      <svg data-testid="lang-progress" width="9.88%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -199,7 +199,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="8.01%">
+      <svg data-testid="lang-progress" width="7.87%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -222,7 +222,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="5.19%">
+      <svg data-testid="lang-progress" width="5.1%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -245,7 +245,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="4.75%">
+      <svg data-testid="lang-progress" width="4.67%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -264,11 +264,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >6 hrs 44 mins</text>
+      >6 hrs 45 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="4.25%">
+      <svg data-testid="lang-progress" width="4.18%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -287,11 +287,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >4 hrs 30 mins</text>
+      >5 hrs 31 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="2.85%">
+      <svg data-testid="lang-progress" width="3.42%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -420,12 +420,12 @@
     </g>
   </g><g transform="translate(0, 325)">
     <g class="stagger" style="animation-delay: 2400ms" transform="translate(25, 0)">
-      <text class="stat bold" y="12.5" data-testid="CSS">CSS:</text>
+      <text class="stat bold" y="12.5" data-testid="YAML">YAML:</text>
       <text
         class="stat"
         x="350"
         y="12.5"
-      >31 mins</text>
+      >49 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
@@ -443,12 +443,12 @@
     </g>
   </g><g transform="translate(0, 350)">
     <g class="stagger" style="animation-delay: 2550ms" transform="translate(25, 0)">
-      <text class="stat bold" y="12.5" data-testid="YAML">YAML:</text>
+      <text class="stat bold" y="12.5" data-testid="CSS">CSS:</text>
       <text
         class="stat"
         x="350"
         y="12.5"
-      >28 mins</text>
+      >31 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
