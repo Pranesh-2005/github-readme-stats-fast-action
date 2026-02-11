@@ -47,7 +47,7 @@
       <line x1="324" y1="30" x2="324" y2="165" class="divider" />
 
       <!-- Total Contributions -->
-      <text x="95" y="85" class="stat">1,785</text>
+      <text x="95" y="85" class="stat">1,787</text>
       <text x="95" y="115" class="label">Total Contributions</text>
       <text x="95" y="145" class="range">Jul 10, 2023 - Present</text>
 
@@ -64,13 +64,13 @@
       </g>
 
       <!-- Current Streak number -->
-      <text x="247.5" y="84" class="circle-label">231</text>
+      <text x="247.5" y="84" class="circle-label">232</text>
       <text x="247.5" y="144" class="label"  style="fill: orange">Current Streak</text>
-      <text x="247.5" y="168" class="range">Jun 24, 2025 - Feb 9</text>
+      <text x="247.5" y="168" class="range">Jun 24, 2025 - Feb 10</text>
 
       <!-- Longest Streak -->
-      <text x="400" y="85" class="stat">231</text>
+      <text x="400" y="85" class="stat">232</text>
       <text x="400" y="115" class="label">Longest Streak</text>
-      <text x="400" y="145" class="range">Jun 24, 2025 - Feb 9</text>
+      <text x="400" y="145" class="range">Jun 24, 2025 - Feb 10</text>
     </svg>
   
