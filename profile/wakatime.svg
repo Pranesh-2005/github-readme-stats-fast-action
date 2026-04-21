@@ -126,11 +126,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >83 hrs 4 mins</text>
+      >83 hrs 6 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="39.03%">
+      <svg data-testid="lang-progress" width="38.96%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -149,11 +149,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >50 hrs 14 mins</text>
+      >50 hrs 28 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="23.6%">
+      <svg data-testid="lang-progress" width="23.66%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -172,11 +172,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >16 hrs 54 mins</text>
+      >17 hrs 3 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="7.94%">
+      <svg data-testid="lang-progress" width="8%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -199,7 +199,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="6.65%">
+      <svg data-testid="lang-progress" width="6.64%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -222,7 +222,7 @@
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="4.46%">
+      <svg data-testid="lang-progress" width="4.45%">
         <rect
             height="8"
             fill="#2f80ed"
@@ -264,11 +264,11 @@
         class="stat"
         x="350"
         y="12.5"
-      >7 hrs 44 mins</text>
+      >7 hrs 46 mins</text>
       
     <svg width="220" x="110" y="4">
       <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#434d58"></rect>
-      <svg data-testid="lang-progress" width="3.64%">
+      <svg data-testid="lang-progress" width="3.65%">
         <rect
             height="8"
             fill="#2f80ed"
