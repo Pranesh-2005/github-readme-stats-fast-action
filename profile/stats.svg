@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">PRANESH S' GitHub Stats, Rank: A</title>
-        <desc id="descId">Total Stars Earned: 449, Total Commits in 2026 : 1505, Total PRs: 130, Total Issues: 12, Contributed to (last year): 17</desc>
+        <desc id="descId">Total Stars Earned: 449, Total Commits in 2026 : 1506, Total PRs: 130, Total Issues: 12, Contributed to (last year): 17</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 35.80664865461719;
+        stroke-dashoffset: 35.8048614611557;
       }
     }
   
