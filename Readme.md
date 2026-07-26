@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Generate stats card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.3
         with:
           card: stats
           options: username=${{ github.repository_owner }}&show_icons=true
@@ -30,7 +30,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.3
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&layout=compact&langs_count=6
@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate streak card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.3
         with:
           card: streak
           options: username=${{ github.repository_owner }}&layout=compact
@@ -46,7 +46,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate pin card
-        uses: Pranesh-2005/github-readme-stats-fast-action@v1
+        uses: Pranesh-2005/github-readme-stats-fast-action@v1.3
         with:
           card: pin
           options: username=pranesh-2005&repo=github-readme-stats-fast
@@ -68,7 +68,7 @@ Then embed from your profile README:
 ![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
 ![Streak](./profile/streak.svg)
-![Pinned](./profile/pin-readme-tools-github-readme-stats.svg)
+![Pinned](./profile/pin-github-readme-stats-fast.svg)
 ```
 
 ## Deployment options
