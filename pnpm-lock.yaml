@@ -13,7 +13,7 @@ importers:
         version: 2.0.2
       github-readme-stats-fast:
         specifier: github:pranesh-2005/github-readme-stats-fast
-        version: https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/8a79191d1878d1605654b670c5579fbcbe0c194b
+        version: https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/27f04b2cd0d22e896612a6525c30d360aa65802b
     devDependencies:
       husky:
         specifier: ^9.0.11
@@ -800,8 +800,8 @@ packages:
     resolution: {integrity: sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==}
     engines: {node: '>=16'}
 
-  github-readme-stats-fast@https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/8a79191d1878d1605654b670c5579fbcbe0c194b:
-    resolution: {tarball: https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/8a79191d1878d1605654b670c5579fbcbe0c194b}
+  github-readme-stats-fast@https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/27f04b2cd0d22e896612a6525c30d360aa65802b:
+    resolution: {tarball: https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/27f04b2cd0d22e896612a6525c30d360aa65802b}
     version: 1.0.0
     engines: {node: '>=22'}
 
@@ -2566,7 +2566,7 @@ snapshots:
 
   get-stream@8.0.1: {}
 
-  github-readme-stats-fast@https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/8a79191d1878d1605654b670c5579fbcbe0c194b:
+  github-readme-stats-fast@https://codeload.github.com/pranesh-2005/github-readme-stats-fast/tar.gz/27f04b2cd0d22e896612a6525c30d360aa65802b:
     dependencies:
       '@octokit/graphql': 9.0.3
       axios: 1.13.2
