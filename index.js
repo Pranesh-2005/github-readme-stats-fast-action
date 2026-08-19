@@ -39,7 +39,10 @@ const parseOptions = (value) => {
   const options = {};
   if (trimmed.startsWith("{")) {
     try {
-      Object.assign(options, JSON.parse(trimmed));
+      const parsed = JSON.parse(trimmed);
+      for (const key of Object.keys(parsed)) {
+        options[key] = parsed[key];
+      }
     } catch (error) {
       throw new Error("Invalid JSON in options.");
     }
