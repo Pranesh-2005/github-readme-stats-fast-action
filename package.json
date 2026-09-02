@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@actions/core": "^2.0.1",
-    "github-readme-stats-fast": "github:pranesh-2005/github-readme-stats-fast"
+    "github-readme-stats-fast": "github:pranesh-2005/github-readme-stats-fast#27f04b2cd0d22e896612a6525c30d360aa65802b"
   },
   "devDependencies": {
     "husky": "^9.0.11",
