@@ -26,5 +26,10 @@
   "engines": {
     "node": ">=22"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "pnpm": {
+    "overrides": {
+      "axios": "1.18.0"
+    }
+  }
 }
